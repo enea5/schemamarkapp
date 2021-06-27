@@ -1,0 +1,226 @@
+#wp-admin-bar-schema-markapp a:before {
+    content: "f475";
+    top: 2px;
+}
+
+#schema-markapp-sidebar {
+    background: #fff;
+    width: 400px;
+    position: fixed;
+    right: 0;
+    top: 32px;
+    bottom: 0;
+    display: none;
+    z-index: 99999; /* same as wordpress's top bar */
+    border-left: 1px #ccc solid;
+}
+
+body.schema-markapp-body {
+    margin: 0;
+    font-family: BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+}
+
+#schema-markapp-sidebar iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.sm-top-panel {
+    background: #f3f3f3;
+    padding: 10px 20px;
+    display: flex;
+    align-items: baseline;
+}
+
+.sm-top-panel span.sm-title {
+    font-size: 13px;
+    font-weight: bold;
+    flex-grow: 1;
+    color: #333333;
+}
+
+.sm-top-panel button {
+    border: 1px #ccc solid;
+    background: #fff;
+    border-radius: 5px;
+    font-size: 13px;
+    padding: 8px 12px;
+    cursor: pointer;
+    outline: none;
+}
+
+.sm-top-panel button.schema-regular {
+    color: #007CBA;
+    border-color: #007CBA;
+    margin-right: 10px;
+}
+
+.sm-top-panel button.schema-regular:hover {
+    background: #f1f1f1;
+    border-color: #016087;
+}
+.sm-top-panel button.schema-regular:active {
+    background: #f3f5f6;
+    border-color: #7e8993;
+}
+
+.sm-top-panel button.schema-primary {
+    background-color: #007CBA;
+    border: 1px #007CBA solid;
+    color: #fff;
+}
+.sm-top-panel button.schema-primary:hover {
+    background: #0071a1;
+    border-color: #0071a1;
+}
+
+.sm-top-panel button.schema-primary:active {
+    background: #00669b;
+    border-color: #00669b;
+}
+
+.sm-scheme .sm-scheme-name {
+    padding: 10px 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.sm-scheme .sm-scheme-name a.edit-schema {
+    font-weight: normal;
+    color: #0073aa;
+    text-decoration: none;
+}
+
+.sm-scheme .sm-scheme-name a:hover {
+    text-decoration: underline;
+}
+
+.sm-scheme .sm-schema-show-fields:before {
+    font-family: dashicons;
+    content: "f347";
+    display: inline-block;
+    vertical-align: middle;
+}
+.sm-scheme .sm-schema-show-fields {
+    color: #000;
+    text-decoration: none;
+    vertical-align: middle;
+}
+
+.sm-scheme .sm-schema-disable-schema {
+    color: #000;
+    text-decoration: none;
+    vertical-align: middle;
+}
+
+.sm-scheme .sm-scheme-option {
+    display: none;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.sm-scheme .sm-scheme-option .label {
+    font-size: 13px;
+    color: #333;
+}
+
+.sm-scheme .sm-scheme-option .input {
+
+}
+
+.sm-scheme .sm-scheme-option .input input,
+.sm-scheme .sm-scheme-option .input select {
+    width: 100%;
+}
+
+/* admin fields in sidebar */
+.sm-scheme .sm-scheme-option h2 {
+    font-size: 12px;
+}
+
+.sm-scheme .sm-scheme-option .form-table th {
+    vertical-align: top;
+    text-align: left;
+    font-size: 12px;
+}
+.sm-scheme .sm-scheme-option .form-table td {
+    font-size: 12px;
+}
+
+.sm-scheme .sm-scheme-option .form-table td input[type=text] {
+    width: 100% !important;
+}
+
+
+
+#schema-markapp-preview-schema {
+    display: none;
+    position: fixed;
+    top: 40px;
+    bottom: 50px;
+    left: 10%;
+    right: 300px;
+    overflow-y: auto;
+    background: white;
+    border: 1px solid #ccc;
+    user-select: none;
+    font-family:BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+}
+
+#schema-markapp-preview-schema .schema-markapp-title-bar {
+    display: flex;
+    align-items: baseline;
+    background-color: #f3f3f3;
+    font-size: 0.7em;
+}
+#schema-markapp-preview-schema .schema-markapp-title-bar span {
+    flex-grow: 1;
+    padding: 10px 20px;
+    font-weight: bold;
+}
+
+#schema-markapp-preview-schema .schema-markapp-title-bar a {
+    padding: 5px 20px;
+}
+
+#schema-markapp-preview-schema .schema-markapp-code-wrap {
+    /*overflow-y: auto;*/
+}
+
+#schema-markapp-preview-schema .sm-schema-title {
+    font-size: 16px;
+    padding: 10px 20px;
+    font-weight: bold;
+}
+#schema-markapp-preview-schema .sm-json {
+    width: 100%;
+    font-family: monospace;
+    font-size: 13px;
+    white-space: pre-wrap;
+    padding: 0px 20px;
+}
+
+.schema-markapp-body .acf-field {
+    margin: 0 0 10px 0;
+}
+.schema-markapp-body .acf-field .acf-label {
+    font-size: 12px;
+    font-weight: bold;
+    padding-bottom: 3px;
+}
+
+.schema-markapp-body .acf-field textarea {
+    height: 40px;
+    width: 100%;
+}
+
+.schema-markapp-body .acf-field input {
+    width: 100%;
+}
+
+/* ACF Overrides */
+.acf-icon.-plus:before,
+.acf-icon.-minus:before{
+    margin-top: 1px;
+    margin-left: 1px;
+}

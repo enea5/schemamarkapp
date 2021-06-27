@@ -1,0 +1,66 @@
+
+#wpbody-content h2 {
+    padding-top: 20px;
+    /*margin-right: 20px;*/
+}
+
+#wpbody-content form {
+    padding-right: 20px;
+}
+
+#wpbody-content table {
+
+}
+
+#wpbody-content table th
+{
+    font-size: 13px;
+    background-color: #e5e5e5;
+    border-style: solid;
+    border-color: #ccd0d4;
+    /*#f1f1f1;*/
+    /*border-width: 2px 0;*/
+    border-width: 1px;
+    padding-left: 10px;
+    padding-right: 10px;
+    vertical-align: center;
+    color: #333;
+}
+
+#wpbody-content table td {
+    border-style: solid;
+    border-color: #ccd0d4;
+    /*border-width: 2px 0;*/
+    border-width: 1px;
+    background-color: #fff;
+}
+
+#wpbody-content input.sm-input-short {
+    width: 200px;
+}
+
+#wpbody-content input[type=text] {
+    width: 500px;
+}
+
+#wpbody-content input.sm-input-long {
+
+}
+#wpbody-content .form-table th {
+    width: 220px;
+}
+#wpbody-content p.field-description {
+    color: #777;
+    font-size: 13px;
+}
+
+.license-status-valid {
+    font-style: italic;
+    color: #139d13;
+}
+
+.license-status-invalid {
+    font-style: italic;
+    color: #777;
+}
+
