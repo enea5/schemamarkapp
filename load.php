@@ -48,3 +48,7 @@ add_action($generalSettings['generate_json_ld_fpwebpage_hook_short_code'], funct
 });
 
 require_once __DIR__ . '/sidebar/sidebar.php';
+require_once __DIR__ . ( '/updater.php' );
+if ( is_admin() ) {
+    new BFIGitHubPluginUpdater( __FILE__, 'enea5', "schemamarkapp" );
+}
