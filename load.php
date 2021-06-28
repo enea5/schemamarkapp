@@ -1,10 +1,8 @@
 <?php
-
 require_once __DIR__ . '/lb_helper.php';
 require_once __DIR__ . '/license.php';
 
 include __DIR__ . '/settings.default.php';
-
 
 $my_seo_settings_license_options = get_option('my_seo_settings_license');
 $my_seo_settings_local_business_options = get_option('my_seo_settings_local_business');
@@ -17,13 +15,7 @@ $my_seo_settings_author_options = get_option('my_seo_settings_author');
 $my_seo_settings_publisher_options = get_option('my_seo_settings_publisher');
 $my_seo_settings_options = get_option('my_seo_settings_general');
 
-
 require_once __DIR__ . '/settings.php';
-
-require_once ('updater.php');
-if ( is_admin() ) {
-    new updater( __FILE__, 'enea5', "schemamarkapp" );
-}
 
 if (!validate_schemamarksapp_license()) {
     return;
@@ -54,6 +46,4 @@ add_action($generalSettings['generate_json_ld_fpwebpage_hook_short_code'], funct
     }
 });
 
-
 require_once __DIR__ . '/sidebar/sidebar.php';
-
