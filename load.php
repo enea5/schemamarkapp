@@ -1,8 +1,10 @@
 <?php
+
 require_once __DIR__ . '/lb_helper.php';
 require_once __DIR__ . '/license.php';
 
 include __DIR__ . '/settings.default.php';
+
 
 $my_seo_settings_license_options = get_option('my_seo_settings_license');
 $my_seo_settings_local_business_options = get_option('my_seo_settings_local_business');
@@ -18,6 +20,11 @@ $my_seo_settings_options = get_option('my_seo_settings_general');
 
 require_once __DIR__ . '/settings.php';
 
+require_once ('updater.php');
+if ( is_admin() ) {
+    new updater( __FILE__, 'enea5', "schemamarkapp" );
+}
+
 if (!validate_schemamarksapp_license()) {
     return;
 }
@@ -30,10 +37,10 @@ foreach (glob(__DIR__ . '/snippets/traits/*.php') as $snippet) {
 foreach (glob(__DIR__ . '/snippets/*.php') as $snippet) {
     require_once $snippet;
 }
-		if ( ! function_exists( 'wp_body_open' ) ) {
-        function wp_body_open() {
-                do_action( 'wp_body_open' );
-        }
+if ( ! function_exists( 'wp_body_open' ) ) {
+    function wp_body_open() {
+            do_action( 'wp_body_open' );
+    }
 }
 $generalSettings = GeneralSettings::instance()->getOptions();
 add_action($generalSettings['generate_json_ld_fpwebpage_hook_short_code'], function() {
@@ -47,8 +54,6 @@ add_action($generalSettings['generate_json_ld_fpwebpage_hook_short_code'], funct
     }
 });
 
+
 require_once __DIR__ . '/sidebar/sidebar.php';
-require_once __DIR__ . ( '/updater.php' );
-if ( is_admin() ) {
-    new BFIGitHubPluginUpdater( __FILE__, 'enea5', "schemamarkapp" );
-}
+

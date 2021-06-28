@@ -1,6 +1,5 @@
 <?php
-
-class BFIGitHubPluginUpdater {
+class updater {
  
     private $slug; // plugin slug
     private $pluginData; // plugin data
@@ -69,7 +68,7 @@ class BFIGitHubPluginUpdater {
         
         // Check the versions if we need to do an update
         $doUpdate = version_compare( $this->githubAPIResult->tag_name, $transient->checked[$this->slug] );
-
+        // var_dump($doUpdate);
         // Update the transient to include our updated plugin data
         if ( $doUpdate == 1 ) {
             $package = $this->githubAPIResult->zipball_url;
