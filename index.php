@@ -6,7 +6,7 @@ Description: Schemati Settings
 Plugin URI: https://schemamarkapp.com/
 Author: Shay Ohayon
 Author URI: https://schemamarkapp.com/
-Version: 4.2.0
+Version: 4.3.2
 */
 
 require_once __DIR__."/load.php";
