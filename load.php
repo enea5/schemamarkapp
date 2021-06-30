@@ -39,8 +39,6 @@ $generalSettings = GeneralSettings::instance()->getOptions();
 $pluginList = get_option( 'active_plugins' );
 $plugin = 'nicepage/nicepage.php'; 
 if ( in_array( $plugin , $pluginList ) &&  $generalSettings['generate_json_ld_fpwebpage_hook_short_code'] === 'wp_body_open' ) {
-    var_dump('expression');
-    
     add_action('wp_footer', 'add_script_schema_to_body');
     
     function add_script_schema_to_body() {
