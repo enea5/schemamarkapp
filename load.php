@@ -35,6 +35,50 @@ if ( ! function_exists( 'wp_body_open' ) ) {
     }
 }
 $generalSettings = GeneralSettings::instance()->getOptions();
+
+$pluginList = get_option( 'active_plugins' );
+$plugin = 'nicepage/nicepage.php'; 
+if ( in_array( $plugin , $pluginList ) &&  $generalSettings['generate_json_ld_fpwebpage_hook_short_code'] === 'wp_body_open' ) {
+    var_dump('expression');
+    
+    add_action('wp_footer', 'add_script_schema_to_body');
+    
+    function add_script_schema_to_body() {
+    ?>
+        <script type="text/javascript">
+            function move_from_footer_to_top() {
+                var ele = document.getElementsByClassName('schemati');                
+                var temp = document.getElementById('query-monitor-css');
+                var body = document.getElementsByTagName('body');
+                var arr_text = [];
+                if (body.length > 0 && ele.length > 0) {
+                    var i = 0;
+                    while(ele[0]) {                     
+                        arr_text[i] = ele[0].text                       
+                        console.log(ele[0]);
+                        ele[0].remove();
+                        i++;
+                    }
+
+                    for (i = 0; i < arr_text.length; i++) {
+                        var element = document.createElement('script');
+                        element.className = 'schemati';
+                        element.type = 'application/ld+json';
+                        element.innerHTML = arr_text[i];
+                        document.body.prepend(element);
+                    }
+
+                } else {
+                    setTimeout(function(){ move_from_footer_to_top(); }, 500);
+                }
+            }
+            move_from_footer_to_top();
+        </script>
+    <?php
+    }
+
+    $generalSettings['generate_json_ld_fpwebpage_hook_short_code'] = 'wp_footer';
+}
 add_action($generalSettings['generate_json_ld_fpwebpage_hook_short_code'], function() {
     foreach(get_declared_classes() as $class){
         if(is_subclass_of($class, 'GenericSchema')) {
