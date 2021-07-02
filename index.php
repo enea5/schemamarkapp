@@ -1,12 +1,12 @@
 <?php
 
 /*
-Plugin Name: Schemati
-Description: Schemati Settings
+Plugin Name: Schema MarkApp
+Description: Schema MarkApp Settings
 Plugin URI: https://schemamarkapp.com/
 Author: Shay Ohayon
 Author URI: https://schemamarkapp.com/
-Version: 4.3.5
+Version: 4.3.6
 */
 
 require_once __DIR__."/load.php";
